@@ -36,15 +36,47 @@ sample config file
 dashboard:
   title: "Security Risk Dashboard"
   description: "This is a sample dashboard"
+  shape:
+    x: 4
+    y: 4
   metrics:
-    - name: "OpenSSF Scorecard"
+    - source: scorecard
       attributes: # these are pulled from the raw json output; use jq syntax
-        - path: .score
-          component: card
-        - path: .checks[0].{name: name, score: score}
-          component: donut
-    - name: "Libraries.io"
+        - name: A
+          path: .score
+          component:
+            - type: card
+              x0: 0
+              y0: 0
+              x: 2
+              y: 2 
+        - name: B
+          path: .checks[0].{score: score}
+          component:
+            - type: donut
+              x0: 2
+              y0: 0
+              x: 2
+              y: 2 
+    - source: libraries_io
       attributes:
-        - path: .checks[0].{value: values}
-          component: card
+        - name: C
+          path: .checks[0].{value: values}
+          component:
+            - type: card
+              x0: 0
+              y0: 2
+              x: 4
+              y: 2 
+```
+
+corresponding view
+```
+title
+description
+---------
+| A | B |
+---------
+|   C   |
+---------
 ```
