@@ -7,11 +7,12 @@ This is a simple dashboard that shows the security risk of open-source projects.
 - Security Engineering Teams -> incorporate the rich set of metrics into their risk assessment process
 - Engineering Management -> understand ecosystem-wide risk and make informed decisions about OSS usage
 
-The dashboard is customizable and incorporates data from the following sources (more to come):
+The dashboard is customizable and incorporates data from the following sources:
 - OpenSSF Scorecard
 - Libraries.io
 - git
 - GitHub
+- more to come...
 
 Usage
 
